@@ -7,11 +7,7 @@ tags:
     - bert
 ---
 
-* sfsdf
-  * sdfsf
-  * sdfsd
-  * fsd
-  * fsd
+* 知识这东西还是要靠积累
 
 <!-- more -->
 
