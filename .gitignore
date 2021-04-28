@@ -1,5 +1,7 @@
-_site
 .DS_Store
-*.swp
-.sass-cache
-*~
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
