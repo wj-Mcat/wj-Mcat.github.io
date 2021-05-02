@@ -115,3 +115,7 @@ deploy:
   message: 'deploy blog'
 
 disqus_shortname: wj-mcat-blog
+
+auto_dir_categorize:
+    enable: true  # options:true, false; default is true
+    force: true # options:true, false; default is false
