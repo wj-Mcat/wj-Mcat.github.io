@@ -20,21 +20,20 @@
     var CONFIG = {"hostname":"wj-mcat.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":10,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="知识这东西还是要靠积累">
+  <meta name="description" content="现在DevOps已然成为项目当中一个常用方式，相信大家都有所涉猎，其中大部分都是基于Git项目管理来进行项目的协作，所以这个时候如何保证你所写的每一行代码都符合社区和公司规范，pre-commit工具能够帮助你更好的完成这个工作。 pre-commit主要是为了完成git项目拉取和提交的过程中完成自定义的一些代码审查、日志记录、自动更新版本号等常见功能，当然也可以参与CD流程中的开发。那今天我就要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于Bert的一切">
-<meta property="og:url" content="https://wj-mcat.github.io/2021/04/28/nlp/bert/index.html">
+<meta property="og:title" content="pre-commit 工具">
+<meta property="og:url" content="https://wj-mcat.github.io/2021/04/29/python/pre-commit/index.html">
 <meta property="og:site_name" content="小猫杂货铺">
-<meta property="og:description" content="知识这东西还是要靠积累">
+<meta property="og:description" content="现在DevOps已然成为项目当中一个常用方式，相信大家都有所涉猎，其中大部分都是基于Git项目管理来进行项目的协作，所以这个时候如何保证你所写的每一行代码都符合社区和公司规范，pre-commit工具能够帮助你更好的完成这个工作。 pre-commit主要是为了完成git项目拉取和提交的过程中完成自定义的一些代码审查、日志记录、自动更新版本号等常见功能，当然也可以参与CD流程中的开发。那今天我就要">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-04-28T03:13:03.000Z">
-<meta property="article:modified_time" content="2021-04-29T00:14:39.548Z">
+<meta property="article:published_time" content="2021-04-29T12:32:58.000Z">
+<meta property="article:modified_time" content="2021-05-02T04:01:54.435Z">
 <meta property="article:author" content="吴京京">
-<meta property="article:tag" content="nlp">
-<meta property="article:tag" content="bert">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://wj-mcat.github.io/2021/04/28/nlp/bert/">
+<link rel="canonical" href="https://wj-mcat.github.io/2021/04/29/python/pre-commit/">
 
 
 <script id="page-configurations">
@@ -47,7 +46,7 @@
   };
 </script>
 
-  <title>关于Bert的一切 | 小猫杂货铺</title>
+  <title>pre-commit 工具 | 小猫杂货铺</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESZPJN20Y1"></script>
     <script>
@@ -161,7 +160,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://wj-mcat.github.io/2021/04/28/nlp/bert/">
+    <link itemprop="mainEntityOfPage" href="https://wj-mcat.github.io/2021/04/29/python/pre-commit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/myself/header.jpeg">
@@ -174,7 +173,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          关于Bert的一切
+          pre-commit 工具
         </h1>
 
         <div class="post-meta">
@@ -184,15 +183,24 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-04-28 11:13:03" itemprop="dateCreated datePublished" datetime="2021-04-28T11:13:03+08:00">2021-04-28</time>
+              <time title="Created: 2021-04-29 20:32:58" itemprop="dateCreated datePublished" datetime="2021-04-29T20:32:58+08:00">2021-04-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-29 08:14:39" itemprop="dateModified" datetime="2021-04-29T08:14:39+08:00">2021-04-29</time>
+                <time title="Modified: 2021-05-02 12:01:54" itemprop="dateModified" datetime="2021-05-02T12:01:54+08:00">2021-05-02</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
 
           
   
@@ -203,8 +211,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2021/04/28/nlp/bert/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/04/28/nlp/bert/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2021/04/29/python/pre-commit/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/04/29/python/pre-commit/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -219,12 +227,51 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <ul>
-<li>知识这东西还是要靠积累</li>
-</ul>
+        <p>现在DevOps已然成为项目当中一个常用方式，相信大家都有所涉猎，其中大部分都是基于Git项目管理来进行项目的协作，所以这个时候如何保证你所写的每一行代码都符合社区和公司规范，pre-commit工具能够帮助你更好的完成这个工作。</p>
+<p>pre-commit主要是为了完成git项目拉取和提交的过程中完成自定义的一些代码审查、日志记录、自动更新版本号等常见功能，当然也可以参与CD流程中的开发。那今天我就要来介绍pre-commit在实际使用过程中的小技巧。</p>
 <span id="more"></span>
 
-<h2 id="idod"><a href="#idod" class="headerlink" title="idod"></a>idod</h2><h3 id="sdfsf"><a href="#sdfsf" class="headerlink" title="sdfsf"></a>sdfsf</h3><h3 id="sdfsdf"><a href="#sdfsdf" class="headerlink" title="sdfsdf"></a>sdfsdf</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.env</span><br></pre></td></tr></table></figure>
+<h2 id="一、快速上手"><a href="#一、快速上手" class="headerlink" title="一、快速上手"></a>一、快速上手</h2><h3 id="1-1-安装工具"><a href="#1-1-安装工具" class="headerlink" title="1.1 安装工具"></a>1.1 安装工具</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pre-commit</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>别看是使用python来安装工具，可是在任何编程语言上都是通用的。</p>
+</blockquote>
+<p>安装完成之后即可查看对应工具的版本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pre-commit --version</span></span><br><span class="line">pre-commit 2.12.1</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-安装hook脚本"><a href="#1-2-安装hook脚本" class="headerlink" title="1.2 安装hook脚本"></a>1.2 安装hook脚本</h3><p>hook是什么？hook原意钩子，是在git提交之前，提交之后执行的脚本，能够进行代码审查，撤销提交操作等，也是这个工具的核心脚本。</p>
+<p>安装的脚本如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pre-commit install</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-配置文件"><a href="#1-3-配置文件" class="headerlink" title="1.3 配置文件"></a>1.3 配置文件</h3><p>当开发者在push代码之前，需要对进行审查，或者push成功之后，在自动更新项目版本文件（VERSION），此类定制化的任务是需要通过配置文件来完成。</p>
+<p>配置文件能够在不同分支和git操作阶段执行自定义任务脚本，完成自定义的代码审查。添加配置文件有多种方式：</p>
+<ul>
+<li>手动添加一个文件：<code>.pre-commit-config.yaml</code></li>
+<li>通过命令行创建一个模板配置文件：<code>pre-commit sample-config</code></li>
+</ul>
+<p>设定一个场景，要在项目本地代码提交之前进行代码审查，其配置文件如下所示：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># the hook execution directory in under git root directory</span></span><br><span class="line"><span class="attr">repos:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">repo:</span> <span class="string">local</span></span><br><span class="line">  <span class="attr">hooks:</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">pylint</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">pylint</span></span><br><span class="line">    <span class="attr">description:</span> <span class="string">&quot;Pylint: Checks for errors in Python code&quot;</span></span><br><span class="line">    <span class="attr">language:</span> <span class="string">python</span></span><br><span class="line">    <span class="attr">entry:</span> <span class="string">pylint</span> <span class="string">./src</span></span><br><span class="line">    <span class="attr">always_run:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">verbose:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">require_serial:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">stages:</span> [<span class="string">push</span>]</span><br><span class="line">    <span class="attr">types:</span> [<span class="string">text</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-参数说明"><a href="#1-4-参数说明" class="headerlink" title="1.4 参数说明"></a>1.4 参数说明</h3><ul>
+<li><p>repos<br>  通过属性名即可得知，此配置文件可对多个repo配置hook，在上述配置当中我只对本地单个repo进行了配置。</p>
+<p>  注意，其中的repo名为：local。</p>
+</li>
+<li><p>hooks<br>  在每个项目当中，可以配置多个hooks任务，从而实现定制化的操作。同样，hooks也是一个列表属性。</p>
+</li>
+<li><p>id/name/description/language/<br>  此类属性是单个hook任务的描述信息。</p>
+</li>
+<li><p>entry<br>  这个就是该hook任务的自定义Bash脚本，大家可以在此处编写逻辑较为复杂的代码审查，也可以将复杂的脚本通过外部脚本文件来执行。这部分就是通过程序员自行扩展。</p>
+</li>
+<li><p>verbose<br>  是否在控制台中打印日志记录，这个通常会设置成True。</p>
+</li>
+<li><p>require_serial<br>  是否在一个进程当中执行该任务：通常情况下不同任务都是隔离的，没有依赖关系，如果审查的耗时较长，则可以设置为<code>False</code>加快其执行的速度。</p>
+</li>
+<li><p>stages<br>  当代码在提交时，会触发<code>commit</code>、<code>commit</code>,<code>merge-commit</code>, <code>push</code>, <code>prepare-commit-msg</code>, <code>commit-msg</code>, <code>post-checkout</code>, <code>post-commit</code>, <code>post-merge</code>, or <code>manual</code>，通常情况下使用<code>push</code>即可。</p>
+</li>
+<li><p>types<br>  pre-commit 工具会在不同类型的文件上制定对应的文件，</p>
+</li>
+</ul>
+
     </div>
 
     
@@ -282,8 +329,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/nlp/" rel="tag"># nlp</a>
-              <a href="/tags/bert/" rel="tag"># bert</a>
+              <a href="/tags/python/" rel="tag"># python</a>
           </div>
 
         
@@ -295,6 +341,16 @@
 
 
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/28/nlp/plm/bert/" rel="prev" title="关于Bert的一切">
+      <i class="fa fa-chevron-left"></i> 关于Bert的一切
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/01/skills/technical-writer/" rel="next" title="Technical Writer">
+      Technical Writer <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
   </article>
@@ -359,7 +415,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#idod"><span class="nav-number">1.</span> <span class="nav-text">idod</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sdfsf"><span class="nav-number">1.1.</span> <span class="nav-text">sdfsf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sdfsdf"><span class="nav-number">1.2.</span> <span class="nav-text">sdfsdf</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B"><span class="nav-number">1.</span> <span class="nav-text">一、快速上手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%AE%89%E8%A3%85%E5%B7%A5%E5%85%B7"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 安装工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%AE%89%E8%A3%85hook%E8%84%9A%E6%9C%AC"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 安装hook脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 参数说明</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -374,12 +430,16 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -564,9 +624,9 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://wj-mcat.github.io/2021/04/28/nlp/bert/";
-    this.page.identifier = "2021/04/28/nlp/bert/";
-    this.page.title = "关于Bert的一切";
+    this.page.url = "https://wj-mcat.github.io/2021/04/29/python/pre-commit/";
+    this.page.identifier = "2021/04/29/python/pre-commit/";
+    this.page.title = "pre-commit 工具";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
