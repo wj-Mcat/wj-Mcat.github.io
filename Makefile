@@ -1,16 +1,18 @@
 .PHONY: install
 install:
+	npm install hexo-cli --save
 	npm install
 
 .PHONY: start
 start:
-	hexo server
+	npm run server
 
 .PHONY: new
 new:
-	hexo new
+	npm run new
 
 .PHONY: deploy
 deploy:
-	hexo genearate
-	hexo deploy
+	npm run clean
+	npm run build
+	npm run deploy
