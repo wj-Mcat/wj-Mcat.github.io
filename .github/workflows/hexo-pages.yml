@@ -11,7 +11,8 @@ jobs:
     steps:
       - name: Build
         run: 
-          make install
+          npm install hexo-cli --save
+          npm install
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
