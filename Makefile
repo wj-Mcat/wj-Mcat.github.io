@@ -12,5 +12,4 @@ new:
 
 .PHONY: deploy
 deploy:
-	hexo genearate
-	hexo deploy
+	hexo genearate && hexo deploy
