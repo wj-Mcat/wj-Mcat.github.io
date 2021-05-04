@@ -110,9 +110,10 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:wj-Mcat/wj-Mcat.github.io.git
+  repo: https://github.com/wj-Mcat/wj-Mcat.github.io.git
   branch: main
   message: 'deploy blog'
+  
 
 disqus_shortname: wj-mcat-blog
 
