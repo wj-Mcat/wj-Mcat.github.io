@@ -110,7 +110,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/wj-Mcat/wj-Mcat.github.io # https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  repo: git@github.com:wj-Mcat/wj-Mcat.github.io.git
   branch: main
   message: 'deploy blog'
 
