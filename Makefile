@@ -5,6 +5,7 @@ install:
 
 .PHONY: start
 start:
+	npm run clean
 	npm run server
 
 .PHONY: new
