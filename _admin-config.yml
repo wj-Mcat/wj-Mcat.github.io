@@ -1,7 +1,7 @@
 options:
   lineNumbers: true
   spellcheck: false
-  imagePath: /images/
+  imagePath: /images/2021.05/
   askImageFilename: true
   overwriteImages: true
 editor:

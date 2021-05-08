@@ -147,3 +147,6 @@ category_generator:
   per_page: 10
   order_by: -date
 
+markdown:
+  plugins:
+    - markdown-it-latex2img
