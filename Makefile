@@ -8,6 +8,12 @@ start:
 	npm run clean
 	npm run server
 
+.PHONY: commit
+commit:
+	git add .
+	git commit -m 'update blogs'
+	git push origin master
+
 .PHONY: new
 new:
 	npm run new

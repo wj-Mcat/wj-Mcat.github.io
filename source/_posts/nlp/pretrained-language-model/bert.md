@@ -14,9 +14,11 @@ date: 2021-04-28 11:13:00
 
 # 介绍
 
-`bert`是一个基于海量无结构化文本进行深度双向语义建模的预训练模型，通过`Mask Language Model`和`Next Sentence Prediction`两种训练任务，学习到文本中丰富的先验知识。实践证明，这些通用先验知识能够应用于各种下游任务，并取得`SOTA`效果，即使是在`low-resource`下也能够取得良好的效果。
+![upload successful](/images/2021.05/bert.png)
 
-bert是由一个谷歌AI NLP团队提出：[《BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding》](https://arxiv.org/abs/1810.04805)，是第一个无监督双向语言模型，一经发表就刷新了各大榜单，被定义为里程碑式的模型，让NLP达到了新的高度。
+`Bert` (**B**idirectional **E**ncoder **R**epresentations from **T**ransformers) 是由谷歌AI NLP团队提出：[《BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding》](https://arxiv.org/abs/1810.04805)，是第一个无监督双向语言模型，一经发表就刷新了各大榜单，被定义为里程碑式的模型，让NLP达到了新的高度。
+
+`Bert`是一个基于海量无结构化文本进行深度双向语义建模的预训练模型，通过`Mask Language Model`和`Next Sentence Prediction`两种训练任务，学习到文本中丰富的先验知识。实践证明，这些通用先验知识能够应用于各种下游任务，并取得`SOTA`效果，即使是在`low-resource`下也能够取得良好的效果。
 
 ## 解决了什么问题
 
@@ -100,17 +102,75 @@ input sentence 和 target sentence 都是需要进行编码，最终得到一个
 
 内部有h个Dot-Product Attention连接：多个独立可学习的参数的特征空间，提升某一层的宽度，提取更多的特征空间。
 
+> 有研究表明，深的网络比宽的网络效果更好。而Bert无论你是宽度还是深度都比较适中，或许这就是理想情况下的结构。
+
 * multi-head：提取特征的数量
 * N-Transformer：提取复杂的特征
 
+核心公式如下所示：
 
+![transformer](/images/2021.05/transformer-math-multi-head.png)
+![transformer-match-dot-product](/images/2021.05/transformer-match-dot-product.png)
+![attention math](/images/2021.05/transformer-attention.png)
 
+> QK^t 的结果大小是:(input_length * input_length)
+
+**可以将Attention看作是给sentence中不同token之间建模相似度关系**
+
+* QK都是input通过不同的权重矩阵映射而来，最后通过dot-product计算映射的相似性，并最终得到一个token-level上的相似度。
+* d_k 是放缩因子，能够减少不同维度大小带来的影响。
+
+#### Dropout, Add & Norm
+
+MultiHead 结构的输出是: (input_length, embedding_dim)，接着将会有Dropout、残差网络已经正则化的处理过程，两处的Dropout都是0.1。
+
+SubLayer：FeedForward、Multi-Head。整体公式为：x + Dropout(Sublayer(x))。
+
+接着会有一个token-wise/row-wise级别的正则化来保证该层数据的稳定性，以此来保证参数学习的范围不要太偏。
+
+![upload successful](/images/2021.05/transformer-layer.png)
+
+#### 理解MultiHead
+
+整体理解：Token Representation + Token Relationship Representation。
+
+换句话说：保留原始token的语义，理解强相关的词与词之间的关系。
+
+#### 总结
+
+* Bert仅仅是使用了Transformer中的Encoder。
+* 由于每一层的输入和输出维度大小一致，故是可以使用链式连接建模。
 
 ## 训练方法
 
 ### Mask Language Model
 
 ### Next Sentence Prediction
+
+## 一堆好问题
+
+### Self-Attention is BiDirectional
+
+> 参考: 
+> * [The feature of bidirection](https://github.com/google-research/bert/issues/83)
+> * [how the model reflect 'bidirectional'?](https://github.com/google-research/bert/issues/319#issuecomment-466844140)
+
+
+* Bert是双向模型，基于Transformer Encoder中的 Bidirectional Self-Attention。
+	* Self-Attention 可以获取left-tokens 和 right-tokens，所以被称为是bidirectional。
+* GPT 是单向模型，基于Transformer Decoder，仅仅是将每一个是token都添加为输入，并生成对应的输出。
+	* 只能够将left-tokens添加到输入当中，输出预测tokens，故称之为unidirectional。
+    
+### 为什么 [CLS] 能作为整个文本的表示
+
+> 参考: [why is cls learning the sentence representation?](https://github.com/google-research/bert/issues/319#issuecomment-522072295)
+
+Bert的输入中，每一个文本开头都会插入一个[CLS]标签，在文本分类的过程中会使用这个位置的标签来作为整个sentence的representation，实践证明效果是非常好的，可是为什么呢？
+
+1. 这个要从Self-Attention说起。Self-Attention中的每一个tokne都可以获得整个sentence的tokens表示，也就是全局的含义表示。而[CLS]虽然是在文本的第一个位置，可是依然不影响能够获得全局的编码。
+2. 选择固定位置的token和指定位置的token表示，其实效果差别挺大的。比如在文本中：`the cat in the hat`和`i like the cat`中的`the`表示的含义是不一致的，而且位置信息也不一致的，没有办法通过指定的token来表示整个sentence。所以选择一个固定位置的token来作为sentence的表示显得尤为重要。
+3. [CLS]标签在第一层Transformer中只是一个初始化的token embedding表示，可是在Self-Attention的加持下，在每一层Transformer迭代的时候，都能够添加获不同层面的all token 编码信息，所以在最后一层的时候是有丰富的sentence-level信息编码。
+
 
 ****
 
@@ -119,4 +179,3 @@ input sentence 和 target sentence 都是需要进行编码，最终得到一个
 * [introduction-for-bert-part-1](https://medium.com/@mromerocalvo/dissecting-bert-part1-6dcf5360b07f)
 * [introduction-for-bert-part-2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 * [Intuitive Explanation of BERT- Bidirectional Transformers for NLP](https://towardsdatascience.com/intuitive-explanation-of-bert-bidirectional-transformers-for-nlp-cdc1efc69c1e)
-* []()
