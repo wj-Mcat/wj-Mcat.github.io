@@ -149,14 +149,11 @@ SubLayer：FeedForward、Multi-Head。整体公式为：x + Dropout(Sublayer(x))
 
 ## 训练方法
 
-Bert是双向自编码语言模型，训练阶段使用了两种方法：Mask Language Model 以及 Next Sentence Prediction。前者主要是为了学习一个丰富的上下文信息。
+Bert是双向自编码语言模型，训练阶段使用了两种方法：Mask Language Model 以及 Next Sentence Prediction。前者主要是为了学习一个丰富的上下文信息，后者为部分下游任务设计（如QA、NLI等任务），目的是建模句子与句子之间的联系。
 
 
-### Mask Language Model
 
-### Next Sentence Prediction
-
-## 一堆好问题
+## 一堆问题
 
 ### Self-Attention is BiDirectional
 
@@ -180,6 +177,22 @@ Bert的输入中，每一个文本开头都会插入一个[CLS]标签，在文�
 2. 选择固定位置的token和指定位置的token表示，其实效果差别挺大的。比如在文本中：`the cat in the hat`和`i like the cat`中的`the`表示的含义是不一致的，而且位置信息也不一致的，没有办法通过指定的token来表示整个sentence。所以选择一个固定位置的token来作为sentence的表示显得尤为重要。
 3. [CLS]标签在第一层Transformer中只是一个初始化的token embedding表示，可是在Self-Attention的加持下，在每一层Transformer迭代的时候，都能够添加获不同层面的all token 编码信息，所以在最后一层的时候是有丰富的sentence-level信息编码。
 
+## 总结
+
+* [MASK]标记在实际预测中不会出现，训练时用过多[MASK]影响模型表现
+* 每个batch只有15%的token被预测，所以BERT收敛得比left-to-right模型要慢（它们会预测每个token）
+
+# 衍生模型
+
+## RoBERTa
+
+## XLNet
+
+## AlBERTa
+
+## FastBert
+
+权重共享的BERT。
 
 ****
 
