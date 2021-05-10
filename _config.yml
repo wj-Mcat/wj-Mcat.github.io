@@ -120,33 +120,33 @@ deploy:
 disqus_shortname: wj-mcat-blog
 
 auto_dir_categorize:
-    enable: true  # options:true, false; default is true
-    force: true # options:true, false; default is false
+  enable: true  # options:true, false; default is true
+  force: true # options:true, false; default is false
 
-widget_tree:
-  hide: true
-  toc: 
-    enable: true
-    list_number: true
-    max_depth: 3
-    min_depth: 2
+# widget_tree:
+#   hide: true
+#   toc: 
+#     enable: true
+#     list_number: true
+#     max_depth: 3
+#     min_depth: 2
 
 # next theme configuration
 
-# menu:
-#   home: / || fa fa-home
-#   about: /about/ || fa fa-user
-#   tags: /tags/ || fa fa-tags
-#   categories: /categories/ || fa fa-th
-#   archives: /archives/ || fa fa-archive
+menu:
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
 
-category_generator:
-  per_page: 10
-  order_by: -date
+# category_generator:
+#   per_page: 10
+#   order_by: -date
 
-markdown:
-  plugins:
-    - markdown-it-latex2img
+# markdown:
+#   plugins:
+#     - markdown-it-latex2img
