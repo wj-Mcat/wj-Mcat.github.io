@@ -201,3 +201,5 @@ Bert的输入中，每一个文本开头都会插入一个[CLS]标签，在文�
 * [introduction-for-bert-part-1](https://medium.com/@mromerocalvo/dissecting-bert-part1-6dcf5360b07f)
 * [introduction-for-bert-part-2](https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73)
 * [Intuitive Explanation of BERT- Bidirectional Transformers for NLP](https://towardsdatascience.com/intuitive-explanation-of-bert-bidirectional-transformers-for-nlp-cdc1efc69c1e)
+* [知识点扩展](https://zhuanlan.zhihu.com/p/46652512)
+
