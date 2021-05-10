@@ -1,3 +1,8 @@
+.PHONY: default
+default: 
+	make commit
+	make deploy
+
 .PHONY: install
 install:
 	npm install hexo-cli --save
