@@ -120,6 +120,12 @@ input sentence 和 target sentence 都是需要进行编码，最终得到一个
 * QK都是input通过不同的权重矩阵映射而来，最后通过dot-product计算映射的相似性，并最终得到一个token-level上的相似度。
 * d_k 是放缩因子，能够减少不同维度大小带来的影响。
 
+#### [SEP] token
+
+Bert 其实是可以应用于多种下有任务当中，其中有一个应用场景就是需要对两段文本进行编码，比如Question Answer任务当中就需要将两个句子拼接到一起，然后塞入到Bert当中编码。那对两个句子进行语义层面的分割便成为了一个问题。
+
+于是就引入了[SEP]标签：在每一个文本的末尾都添加一个[SEP]标签来分割两端，从而让模型
+
 #### Dropout, Add & Norm
 
 MultiHead 结构的输出是: (input_length, embedding_dim)，接着将会有Dropout、残差网络已经正则化的处理过程，两处的Dropout都是0.1。
@@ -142,6 +148,9 @@ SubLayer：FeedForward、Multi-Head。整体公式为：x + Dropout(Sublayer(x))
 * 由于每一层的输入和输出维度大小一致，故是可以使用链式连接建模。
 
 ## 训练方法
+
+Bert是双向自编码语言模型，训练阶段使用了两种方法：Mask Language Model 以及 Next Sentence Prediction。前者主要是为了学习一个丰富的上下文信息。
+
 
 ### Mask Language Model
 
