@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><!-- hexo injector head_begin start --><link href="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.1.1/css/index.css" rel="stylesheet"/><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wj-mcat.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="作为程序员一定要成为sharer 分享是什么？ 分享的重要性？ 分享的途径？  黑客与画家曾指出，程序员其实和画家本质上无异，都是创作者，而面对新时代的发展，分享将成为个人职业规划中的一个非常重要的环节，这不仅仅是向世界展示自己的思想，更重要的是与世界交流，与世界共同成长。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Become a Sharer">
+<meta property="og:url" content="https://wj-mcat.github.io/2021/08/20/thoughts/become-a-sharer/index.html">
+<meta property="og:site_name" content="小猫杂货铺">
+<meta property="og:description" content="作为程序员一定要成为sharer 分享是什么？ 分享的重要性？ 分享的途径？  黑客与画家曾指出，程序员其实和画家本质上无异，都是创作者，而面对新时代的发展，分享将成为个人职业规划中的一个非常重要的环节，这不仅仅是向世界展示自己的思想，更重要的是与世界交流，与世界共同成长。">
+<meta property="og:locale">
+<meta property="og:image" content="https://wj-mcat.github.io/images/2021.08/become-a-sharer.jpg">
+<meta property="article:published_time" content="2021-08-20T02:14:00.000Z">
+<meta property="article:modified_time" content="2021-08-20T05:34:24.834Z">
+<meta property="article:author" content="吴京京">
+<meta property="article:tag" content="AI,Chatbot,Wechaty">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wj-mcat.github.io/images/2021.08/become-a-sharer.jpg">
+
+<link rel="canonical" href="https://wj-mcat.github.io/2021/08/20/thoughts/become-a-sharer/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Become a Sharer | 小猫杂货铺</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">小猫杂货铺</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">分享技术生活中的细枝末节</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://wj-mcat.github.io/2021/08/20/thoughts/become-a-sharer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="吴京京">
+      <meta itemprop="description" content="我想，坚持把博客给写下去">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小猫杂货铺">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Become a Sharer
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-08-20 10:14:00 / Modified: 13:34:24" itemprop="dateCreated datePublished" datetime="2021-08-20T10:14:00+08:00">2021-08-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/thoughts/" itemprop="url" rel="index"><span itemprop="name">thoughts</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ul>
+<li>作为程序员一定要成为sharer</li>
+<li>分享是什么？</li>
+<li>分享的重要性？</li>
+<li>分享的途径？</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/6021440/">黑客与画家</a>曾指出，程序员其实和画家本质上无异，都是创作者，而面对新时代的发展，分享将成为个人职业规划中的一个非常重要的环节，这不仅仅是向世界展示自己的思想，更重要的是与世界交流，与世界共同成长。</p>
+<span id="more"></span>
+<blockquote>
+<p>此篇文章针对于热爱写代码，并在写代码的时候感觉到快乐的人，在下文我称之为Coder。</p>
+</blockquote>
+<h2 id="一定要成为一个Sharer">一定要成为一个Sharer</h2>
+<p>这一点Coder很重要，为什么程序员一定要分享？我想大家都有所涉猎，我就不再详述，简单的罗列一下：</p>
+<ul>
+<li>建立知识体系</li>
+<li>提升社区影响力</li>
+<li>提升发展可能性</li>
+<li>提升发展上限</li>
+<li>为心中曾经的那一个梦</li>
+</ul>
+<p>分享能够通过他人来验证自己的理解，无论正确与否，这都是自己的见解，从不同角度出发给出的属于自己对于整个世界的认知。不要担心是否会被diss，因为之后这样你才能够认识到自己还是有提升的方面。</p>
+<h2 id="分享到底是什么">分享到底是什么</h2>
+<p>作为一个程序员，分享就是针对于一个知识点、问题、一个新技术来表达你对其的理解，然后通过一些媒体渠道散播出去，与大家一起讨论相关内容。</p>
+<p>你可以分享属于自己知识领域的东西，比如<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/home.html">阮一峰</a>就经常在自己的博客上面分享工作和学习过程中的所见所闻，起初是一直在分享领域内的知识点，最近（截止2021.08.20）一直在组织科技爱好者周刊，推广并介绍科技领域内的高质量新闻。</p>
+<p>你可以分享新技术，新框架。比如说你可以写一篇关于聊天机器人框架的博文，然后分享在知乎、掘金等技术社交媒体上，与大家共同讨论相关的不同层面的内容。</p>
+<p>你也可以分享你对某个知识的感悟，此时并不是站在技术的角度，而是自己长期以来的经历后的理解。这些也是非常有价值的分享，可以与他人进行更深入的讨论上层建筑，这是一件非常有挑战性的事情，可以锻炼整体观的归纳能力，也可以结交更过志同道合的朋友，何乐而不为呢？</p>
+<p>可以说，阮一峰是很多程序员所向往的那种状态，工作之余写一些优秀的博文，和大家一起讨论技术和热点技术新闻，顺带给自己增加一些额外收入（大部分都是广告），即做了自己喜欢的事情，也有了一定的收入，可以反向激励着自己继续坚持爱好，我想这就是最理想中的分享的样子吧。</p>
+<p>而这一切都是最初对于分享这件事情的坚持。让他积攒了领域内的技术，面试和工作当中都比较有竞争力；让他积攒了社区影响力，然后额外收入就自然而然找上门，未来可选择的机会就多了；我相信，他在坚持的这条路上，逐渐清晰自己未来想要什么，而坚持所带来的反馈也让他越来越相信坚持的重要性和必要性。</p>
+<h2 id="如何开始分享">如何开始分享</h2>
+<p>前几个月我的一个朋友曾告诉我，对于一个初学者而言，如何开始写作？那就是无论质量，先以你当下最好的水平开始写，写多了，你就会开始总结，寻找方法，如何针对于当先作最切实际的改进。而并非是一开始就把best practice背熟悉，然后开始按照套路来写，那如果真的是这样，每个人的写作风格和质量都将是差不多，而现实并非如此。</p>
+<p>所以，从现实反推理论，我很认同我朋友给我的建议，先大致看一下best practice，只要自己的整体方向没有错，就开始上手，时间一长，基本上就轻车熟路，然后再对照着best practice来看看是否需要做出一定的调整，多次迭代调整之后，我相信会形成属于自己的风格与写作框架。</p>
+<p>我在这里推荐两篇比较优秀的文章，有干货有见解，希望对大家有所帮助：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/40716838/answer/88522718">程序员怎样才能写出一篇好的博客或者技术文章？</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/273631529/answer/1330177772">写博客对程序员很重要吗？</a></li>
+</ul>
+<h2 id="总结">总结</h2>
+<blockquote>
+<p>如果没有兴趣爱好，分享这件事情是坚持不下来的</p>
+</blockquote>
+<p>我想有很多人都尝试过分享，有自己的博客，只不过上面的文章寥寥无几，是因为三分钟热度之后就没有后续。</p>
+<p>有的人是因为最开始就没有给自己正向反馈，于是就慢慢放弃了，我想这还是因为没有兴趣，如果有，每一次的post都将会是一个激励。网上有很多<strong>干货</strong>，可是这些干货归根结底还是需要自己用某种方式坚持，所以说坚持才是这件事情的核心。既然事情的输出都是一样的，选择好属于自己的方式，规划好时间，努力坚持就行了，从现在开始。如果没坚持下去也没关系，因为毕竟你已经失败过很多次了，多一次也没关系，你也还在这个死循环里面，什么时候打破这个死循环，就看你什么时候能够把坚持这件事情贯彻到底。</p>
+<p>在文章的最后，我给大家推荐一个大佬访谈，主要是谈关于开源的一些事情，且这篇文章也是根据这个访谈而来。</p>
+<p><img src="/images/2021.08/become-a-sharer.jpg" alt=""></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/11/nlp/MLOps/" rel="prev" title="MLOps">
+      <i class="fa fa-chevron-left"></i> MLOps
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%AE%9A%E8%A6%81%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AASharer"><span class="nav-number">1.</span> <span class="nav-text">一定要成为一个Sharer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E4%BA%AB%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">2.</span> <span class="nav-text">分享到底是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B%E5%88%86%E4%BA%AB"><span class="nav-number">3.</span> <span class="nav-text">如何开始分享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">吴京京</p>
+  <div class="site-description" itemprop="description">我想，坚持把博客给写下去</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吴京京</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.1.1/js/index.js"></script><div id="widget-tree">
+      <ul><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/nlp/">nlp</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/nlp/components/">components</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/05/08/nlp/components/attention/" title="Attention"><i class="post-icon gg-file-document"></i>Attention</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/nlp/papers/">papers</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-toc-icon gg-file-add"></i><a class="tree-list-post-link" href="/2021/05/07/nlp/papers/few-shot/" title="few-shot papers">few-shot papers</a><ol class="tree-post-toc"><li class="tree-post-toc-item tree-post-toc-level-1"><a class="tree-post-toc-link"><span class="tree-post-toc-number">1.</span> <span class="tree-post-toc-text">介绍</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFFew-Shot"><span class="tree-post-toc-number">1.1.</span> <span class="tree-post-toc-text">什么是Few-Shot</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#few-shot-VS-zero-shot"><span class="tree-post-toc-number">1.2.</span> <span class="tree-post-toc-text">few-shot VS zero-shot</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E6%96%B9%E6%B3%95"><span class="tree-post-toc-number">1.3.</span> <span class="tree-post-toc-text">方法</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#Entropy-Regularization"><span class="tree-post-toc-number">1.3.1.</span> <span class="tree-post-toc-text">Entropy Regularization</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="tree-post-toc-number">1.4.</span> <span class="tree-post-toc-text">数据集</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E5%AD%AA%E7%94%9F%E7%BD%91%E7%BB%9C"><span class="tree-post-toc-number">1.5.</span> <span class="tree-post-toc-text">孪生网络</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E6%8A%80%E5%B7%A7"><span class="tree-post-toc-number">1.6.</span> <span class="tree-post-toc-text">技巧</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-1"><a class="tree-post-toc-link"><span class="tree-post-toc-number">2.</span> <span class="tree-post-toc-text">论文列表</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#2021"><span class="tree-post-toc-number">2.1.</span> <span class="tree-post-toc-text">2021</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#PROTODA-EFFICIENT-TRANSFER-LEARNING-FOR-FEW-SHOT-INTENT-CLASSIFICATION"><span class="tree-post-toc-number">2.1.1.</span> <span class="tree-post-toc-text">PROTODA: EFFICIENT TRANSFER LEARNING FOR FEW-SHOT INTENT CLASSIFICATION</span></a></li></ol></li></ol></li></ol></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/nlp/pretrained-language-model/">pretrained-language-model</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-toc-icon gg-file-add"></i><a class="tree-list-post-link" href="/2021/04/28/nlp/pretrained-language-model/bert/" title="关于Bert的一切">关于Bert的一切</a><ol class="tree-post-toc"><li class="tree-post-toc-item tree-post-toc-level-1"><a class="tree-post-toc-link"><span class="tree-post-toc-number">1.</span> <span class="tree-post-toc-text">介绍</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98"><span class="tree-post-toc-number">1.1.</span> <span class="tree-post-toc-text">解决了什么问题</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E5%BC%BA"><span class="tree-post-toc-number">1.2.</span> <span class="tree-post-toc-text">为什么这么强</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E6%95%B4%E4%BD%93%E7%BB%93%E6%9E%84"><span class="tree-post-toc-number">1.3.</span> <span class="tree-post-toc-text">整体结构</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#Transformer"><span class="tree-post-toc-number">1.4.</span> <span class="tree-post-toc-text">Transformer</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E9%97%AE%E9%A2%98%E5%AE%9A%E4%B9%89"><span class="tree-post-toc-number">1.4.1.</span> <span class="tree-post-toc-text">问题定义</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E6%B5%81%E5%90%91"><span class="tree-post-toc-number">1.4.2.</span> <span class="tree-post-toc-text">数据的流向</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E8%BE%93%E5%85%A5%E8%A1%A8%E7%A4%BA"><span class="tree-post-toc-number">1.4.3.</span> <span class="tree-post-toc-text">输入表示</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#Encoder-Layer"><span class="tree-post-toc-number">1.4.4.</span> <span class="tree-post-toc-text">Encoder Layer</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-4"><a class="tree-post-toc-link" href="#Multi-Header-Layer"><span class="tree-post-toc-number">1.4.4.1.</span> <span class="tree-post-toc-text">Multi-Header Layer</span></a></li><li class="tree-post-toc-item tree-post-toc-level-4"><a class="tree-post-toc-link" href="#SEP-token"><span class="tree-post-toc-number">1.4.4.2.</span> <span class="tree-post-toc-text">[SEP] token</span></a></li><li class="tree-post-toc-item tree-post-toc-level-4"><a class="tree-post-toc-link" href="#Dropout-Add-Norm"><span class="tree-post-toc-number">1.4.4.3.</span> <span class="tree-post-toc-text">Dropout, Add &amp; Norm</span></a></li><li class="tree-post-toc-item tree-post-toc-level-4"><a class="tree-post-toc-link" href="#%E7%90%86%E8%A7%A3MultiHead"><span class="tree-post-toc-number">1.4.4.4.</span> <span class="tree-post-toc-text">理解MultiHead</span></a></li><li class="tree-post-toc-item tree-post-toc-level-4"><a class="tree-post-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="tree-post-toc-number">1.4.4.5.</span> <span class="tree-post-toc-text">总结</span></a></li></ol></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95"><span class="tree-post-toc-number">1.5.</span> <span class="tree-post-toc-text">训练方法</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%B8%80%E5%A0%86%E9%97%AE%E9%A2%98"><span class="tree-post-toc-number">1.6.</span> <span class="tree-post-toc-text">一堆问题</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#Self-Attention-is-BiDirectional"><span class="tree-post-toc-number">1.6.1.</span> <span class="tree-post-toc-text">Self-Attention is BiDirectional</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-CLS-%E8%83%BD%E4%BD%9C%E4%B8%BA%E6%95%B4%E4%B8%AA%E6%96%87%E6%9C%AC%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="tree-post-toc-number">1.6.2.</span> <span class="tree-post-toc-text">为什么 [CLS] 能作为整个文本的表示</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E6%80%BB%E7%BB%93-2"><span class="tree-post-toc-number">1.7.</span> <span class="tree-post-toc-text">总结</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-1"><a class="tree-post-toc-link"><span class="tree-post-toc-number">2.</span> <span class="tree-post-toc-text">衍生模型</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#RoBERTa"><span class="tree-post-toc-number">2.1.</span> <span class="tree-post-toc-text">RoBERTa</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#XLNet"><span class="tree-post-toc-number">2.2.</span> <span class="tree-post-toc-text">XLNet</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#AlBERTa"><span class="tree-post-toc-number">2.3.</span> <span class="tree-post-toc-text">AlBERTa</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#FastBert"><span class="tree-post-toc-number">2.4.</span> <span class="tree-post-toc-text">FastBert</span></a></li></ol></li></ol></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/python/">python</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-toc-icon gg-file-add"></i><a class="tree-list-post-link" href="/2021/04/29/python/pre-commit/" title="pre-commit 工具">pre-commit 工具</a><ol class="tree-post-toc"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%B8%80%E3%80%81%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B"><span class="tree-post-toc-number">1.</span> <span class="tree-post-toc-text">一、快速上手</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#1-1-%E5%AE%89%E8%A3%85%E5%B7%A5%E5%85%B7"><span class="tree-post-toc-number">1.1.</span> <span class="tree-post-toc-text">1.1 安装工具</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#1-2-%E5%AE%89%E8%A3%85hook%E8%84%9A%E6%9C%AC"><span class="tree-post-toc-number">1.2.</span> <span class="tree-post-toc-text">1.2 安装hook脚本</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#1-3-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="tree-post-toc-number">1.3.</span> <span class="tree-post-toc-text">1.3 配置文件</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#1-4-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="tree-post-toc-number">1.4.</span> <span class="tree-post-toc-text">1.4 参数说明</span></a></li></ol></li></ol></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/skills/">skills</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/05/01/skills/how-to-write-readme/" title="如何编写一个好的README"><i class="post-icon gg-file-document"></i>如何编写一个好的README</a></li><li class="tree-list-item"><i class="toggle-toc-icon gg-file-add"></i><a class="tree-list-post-link" href="/2021/05/01/skills/technical-writer/" title="Technical Writer">Technical Writer</a><ol class="tree-post-toc"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFTechnical-Writer"><span class="tree-post-toc-number">1.</span> <span class="tree-post-toc-text">什么是Technical Writer</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="tree-post-toc-number">1.1.</span> <span class="tree-post-toc-text">概念</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#Technical-Writer-%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="tree-post-toc-number">1.2.</span> <span class="tree-post-toc-text">Technical Writer 的目的</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%B8%80%E5%AE%9A%E8%A6%81%E6%88%90%E4%B8%BATechnical-Writer"><span class="tree-post-toc-number">2.</span> <span class="tree-post-toc-text">一定要成为Technical Writer</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E6%9C%80%E5%A5%BD%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="tree-post-toc-number">2.1.</span> <span class="tree-post-toc-text">最好的学习方法</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E8%A1%8C%E5%8A%A8%E5%8A%9B"><span class="tree-post-toc-number">2.2.</span> <span class="tree-post-toc-text">行动力</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E5%8F%AF%E8%83%BD%E6%80%A7"><span class="tree-post-toc-number">2.3.</span> <span class="tree-post-toc-text">可能性</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E8%87%AA%E5%88%B6%E5%8A%9B"><span class="tree-post-toc-number">2.4.</span> <span class="tree-post-toc-text">自制力</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AATechnical-Writer%EF%BC%9F"><span class="tree-post-toc-number">3.</span> <span class="tree-post-toc-text">如何成为一个Technical Writer？</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%80%A7"><span class="tree-post-toc-number">3.1.</span> <span class="tree-post-toc-text">系统性</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E5%B0%91%E7%82%B9%E6%8B%98%E6%9D%9F"><span class="tree-post-toc-number">3.2.</span> <span class="tree-post-toc-text">少点拘束</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E5%8D%9A%E6%96%87%E4%B8%8D%E6%98%AF%E4%B8%80%E8%B9%B4%E8%80%8C%E5%B0%B1"><span class="tree-post-toc-number">3.3.</span> <span class="tree-post-toc-text">博文不是一蹴而就</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%9D"><span class="tree-post-toc-number">4.</span> <span class="tree-post-toc-text">给自己的话</span></a></li></ol></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/thoughts/">thoughts</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-toc-icon gg-file-add"></i><a class="tree-list-post-link" href="/2021/08/20/thoughts/become-a-sharer/" title="Become a Sharer">Become a Sharer</a><ol class="tree-post-toc"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%B8%80%E5%AE%9A%E8%A6%81%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AASharer"><span class="tree-post-toc-number">1.</span> <span class="tree-post-toc-text">一定要成为一个Sharer</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E5%88%86%E4%BA%AB%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88"><span class="tree-post-toc-number">2.</span> <span class="tree-post-toc-text">分享到底是什么</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B%E5%88%86%E4%BA%AB"><span class="tree-post-toc-number">3.</span> <span class="tree-post-toc-text">如何开始分享</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="tree-post-toc-number">4.</span> <span class="tree-post-toc-text">总结</span></a></li></ol></li></ul></li></ul>
+        <div id="widget-tree-button">
+          <i class="gg-chevron-right"></i>
+        </div>
+      </div><!-- hexo injector body_end end --></body>
+</html>

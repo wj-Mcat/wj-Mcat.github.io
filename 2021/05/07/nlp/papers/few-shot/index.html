@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><!-- hexo injector head_begin start --><link href="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.1.1/css/index.css" rel="stylesheet"/><!-- hexo injector head_begin end -->
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wj-mcat.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Few-Shot 在工业界落地非常吃香，很大原因在于让客户给你标注数据的代价太大，就算给你标，也很容易出现脏数据，此时few-shot就显得尤为重要。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="few-shot papers">
+<meta property="og:url" content="https://wj-mcat.github.io/2021/05/07/nlp/papers/few-shot/index.html">
+<meta property="og:site_name" content="小猫杂货铺">
+<meta property="og:description" content="Few-Shot 在工业界落地非常吃香，很大原因在于让客户给你标注数据的代价太大，就算给你标，也很容易出现脏数据，此时few-shot就显得尤为重要。">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-05-07T15:12:01.000Z">
+<meta property="article:modified_time" content="2021-08-20T05:37:06.076Z">
+<meta property="article:author" content="吴京京">
+<meta property="article:tag" content="nlp">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://wj-mcat.github.io/2021/05/07/nlp/papers/few-shot/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>few-shot papers | 小猫杂货铺</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">小猫杂货铺</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">分享技术生活中的细枝末节</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://wj-mcat.github.io/2021/05/07/nlp/papers/few-shot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="吴京京">
+      <meta itemprop="description" content="我想，坚持把博客给写下去">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小猫杂货铺">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          few-shot papers
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-07 23:12:01" itemprop="dateCreated datePublished" datetime="2021-05-07T23:12:01+08:00">2021-05-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-20 13:37:06" itemprop="dateModified" datetime="2021-08-20T13:37:06+08:00">2021-08-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nlp/" itemprop="url" rel="index"><span itemprop="name">nlp</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nlp/papers/" itemprop="url" rel="index"><span itemprop="name">papers</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Few-Shot 在工业界落地非常吃香，很大原因在于让客户给你标注数据的代价太大，就算给你标，也很容易出现脏数据，此时few-shot就显得尤为重要。</p>
+<span id="more"></span>
+<h1>介绍</h1>
+<h2 id="什么是Few-Shot">什么是Few-Shot</h2>
+<p>Few-Shot learning(FSL)，在少量数据集（通常2个，5个左右）上进行预测的深度学习方法。</p>
+<p>目前的机器学习中，都是基于大量数据来训练模型，甚至流行一句话：数据多又好，模型才能好。可这个在现实工业落地场景中是一个不实际的场景，更多的都是少又脏的数据，而Few-Shot学习则主要是为了解决这样的问题。</p>
+<p>为什么few-shot能work且这么重要呢？</p>
+<ul>
+<li>像人类一样判断：few-shot 通过把query和support set进行对比，找到相似度最高的那个类别，这个过程和人类来判断一个新事物的方式是非常类似的，也容易理解。</li>
+<li>在少量数据集上学习：通过将query与提供的少量支撑集进行相似度对比计算，得到query的类别，这个过程能够基于非常少量的数据集上学习到一个很好的效果，这个对于实际工业落地来说，非常的重要。</li>
+<li>降低数据搜集和算力的消耗：由于数据集非常少，搜集起来就相对简单，同时计算也非常快，这也是对于工业界非常有益。</li>
+</ul>
+<h2 id="few-shot-VS-zero-shot">few-shot VS zero-shot</h2>
+<h2 id="方法">方法</h2>
+<ul>
+<li>Pretraing：基于某一个预训练模型来对输入进行编码，提取特征。</li>
+<li>fine-tuning: SoftMax Linear
+<ul>
+<li>用supoort set的向量平均数据作为初始值</li>
+<li>entropy regularization</li>
+<li>cosine similarity + Softmax Linear Classifier</li>
+</ul>
+</li>
+<li>few-shot prediction：根据一个query在support set中进行预测，一类support set中的特征将会取平均。</li>
+</ul>
+<h3 id="Entropy-Regularization">Entropy Regularization</h3>
+<p>属于强化学习中的一个正则化方法。</p>
+<p>在正式讲解之前，需要预习一下Entropy基本概念：如果类别判断的信心分数很低（类别分数平均），则Entropy score很高；如果类别判断的信心分数很高（类别分数不平均，可以肯定是属于哪类），则Entropy score很低。</p>
+<blockquote>
+<p>信息熵本身就是描述一件事物的混乱程度，且始终趋于混乱程度更高的方向发展。</p>
+</blockquote>
+<p>作用：</p>
+<ul>
+<li>Improve Exploration</li>
+</ul>
+<p>提升模型的优化能力，避免local optimization。</p>
+<ul>
+<li>Fine-Tuning Policies</li>
+</ul>
+<p>在Fine-Tuning过程中，使用Entropy Regularization能够让模型优化更加具有探索性，避免过拟合，让模型总是有探索性的去优化全局参数。</p>
+<ul>
+<li>More Robustness</li>
+</ul>
+<p>由于模型在fine-tuning阶段更具有探索性，故模型能够避免局部优化，提升全局优化，提升模型的鲁棒性。</p>
+<blockquote>
+<p>参考论文：<a target="_blank" rel="noopener" href="https://www.aclweb.org/anthology/2020.acl-main.615.pdf">Generalized Entropy Regularization or: There’s Nothing Special about Label Smoothing</a></p>
+</blockquote>
+<h2 id="数据集">数据集</h2>
+<ul>
+<li>Omnilglot：手下数字识别，类别很多，数据集非常小，很适合在学术界上学习测试</li>
+<li>Mini-ImageNet：100classes</li>
+</ul>
+<h2 id="孪生网络">孪生网络</h2>
+<blockquote>
+<p>连体网络</p>
+</blockquote>
+<p>Encoder层级是一致的。</p>
+<p>训练数据是需要进行正负例样本。<br>
+Loss： Triple Loss</p>
+<p>One-Shot Prediction：最后只需要计算distance</p>
+<p>步骤：</p>
+<ul>
+<li>使用孪生网络在是大型数据集上做训练</li>
+<li>构造support-set
+<ul>
+<li>训练数据集是包含测试集中的类别</li>
+</ul>
+</li>
+<li>使用孪生网络来计算其相似度</li>
+</ul>
+<h2 id="技巧">技巧</h2>
+<h1>论文列表</h1>
+<h2 id="2021">2021</h2>
+<h3 id="PROTODA-EFFICIENT-TRANSFER-LEARNING-FOR-FEW-SHOT-INTENT-CLASSIFICATION">PROTODA: EFFICIENT TRANSFER LEARNING FOR FEW-SHOT INTENT CLASSIFICATION</h3>
+<hr>
+<p>参考链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.bitsrc.io/how-to-write-beautiful-and-meaningful-readme-md-for-your-next-project-897045e3f991">How to Write Beautiful and Meaningful README.md</a></li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1904.04232">A Closer Look at Few-shot Classification</a></li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.02729">A Baseline for few-shot Image classification</a></li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2003.04390">A New Meta-Baseline for Few-Shot Learning</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/nlp/" rel="tag"># nlp</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/01/skills/how-to-write-readme/" rel="prev" title="如何编写一个好的README">
+      <i class="fa fa-chevron-left"></i> 如何编写一个好的README
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/08/nlp/components/attention/" rel="next" title="Attention">
+      Attention <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFFew-Shot"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Few-Shot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#few-shot-VS-zero-shot"><span class="nav-number">1.2.</span> <span class="nav-text">few-shot VS zero-shot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Entropy-Regularization"><span class="nav-number">1.3.1.</span> <span class="nav-text">Entropy Regularization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">1.4.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%AA%E7%94%9F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.5.</span> <span class="nav-text">孪生网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E5%B7%A7"><span class="nav-number">1.6.</span> <span class="nav-text">技巧</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">论文列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2021"><span class="nav-number">2.1.</span> <span class="nav-text">2021</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PROTODA-EFFICIENT-TRANSFER-LEARNING-FOR-FEW-SHOT-INTENT-CLASSIFICATION"><span class="nav-number">2.1.1.</span> <span class="nav-text">PROTODA: EFFICIENT TRANSFER LEARNING FOR FEW-SHOT INTENT CLASSIFICATION</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">吴京京</p>
+  <div class="site-description" itemprop="description">我想，坚持把博客给写下去</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吴京京</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.1.1/js/index.js"></script><div id="widget-tree">
+      <ul><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/nlp/">nlp</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/nlp/components/">components</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/05/08/nlp/components/attention/" title="Attention"><i class="post-icon gg-file-document"></i>Attention</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/nlp/papers/">papers</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-toc-icon gg-file-add"></i><a class="tree-list-post-link" href="/2021/05/07/nlp/papers/few-shot/" title="few-shot papers">few-shot papers</a><ol class="tree-post-toc"><li class="tree-post-toc-item tree-post-toc-level-1"><a class="tree-post-toc-link"><span class="tree-post-toc-number">1.</span> <span class="tree-post-toc-text">介绍</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFFew-Shot"><span class="tree-post-toc-number">1.1.</span> <span class="tree-post-toc-text">什么是Few-Shot</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#few-shot-VS-zero-shot"><span class="tree-post-toc-number">1.2.</span> <span class="tree-post-toc-text">few-shot VS zero-shot</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E6%96%B9%E6%B3%95"><span class="tree-post-toc-number">1.3.</span> <span class="tree-post-toc-text">方法</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#Entropy-Regularization"><span class="tree-post-toc-number">1.3.1.</span> <span class="tree-post-toc-text">Entropy Regularization</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="tree-post-toc-number">1.4.</span> <span class="tree-post-toc-text">数据集</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E5%AD%AA%E7%94%9F%E7%BD%91%E7%BB%9C"><span class="tree-post-toc-number">1.5.</span> <span class="tree-post-toc-text">孪生网络</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E6%8A%80%E5%B7%A7"><span class="tree-post-toc-number">1.6.</span> <span class="tree-post-toc-text">技巧</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-1"><a class="tree-post-toc-link"><span class="tree-post-toc-number">2.</span> <span class="tree-post-toc-text">论文列表</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#2021"><span class="tree-post-toc-number">2.1.</span> <span class="tree-post-toc-text">2021</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#PROTODA-EFFICIENT-TRANSFER-LEARNING-FOR-FEW-SHOT-INTENT-CLASSIFICATION"><span class="tree-post-toc-number">2.1.1.</span> <span class="tree-post-toc-text">PROTODA: EFFICIENT TRANSFER LEARNING FOR FEW-SHOT INTENT CLASSIFICATION</span></a></li></ol></li></ol></li></ol></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/nlp/pretrained-language-model/">pretrained-language-model</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-toc-icon gg-file-add"></i><a class="tree-list-post-link" href="/2021/04/28/nlp/pretrained-language-model/bert/" title="关于Bert的一切">关于Bert的一切</a><ol class="tree-post-toc"><li class="tree-post-toc-item tree-post-toc-level-1"><a class="tree-post-toc-link"><span class="tree-post-toc-number">1.</span> <span class="tree-post-toc-text">介绍</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98"><span class="tree-post-toc-number">1.1.</span> <span class="tree-post-toc-text">解决了什么问题</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E5%BC%BA"><span class="tree-post-toc-number">1.2.</span> <span class="tree-post-toc-text">为什么这么强</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E6%95%B4%E4%BD%93%E7%BB%93%E6%9E%84"><span class="tree-post-toc-number">1.3.</span> <span class="tree-post-toc-text">整体结构</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#Transformer"><span class="tree-post-toc-number">1.4.</span> <span class="tree-post-toc-text">Transformer</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E9%97%AE%E9%A2%98%E5%AE%9A%E4%B9%89"><span class="tree-post-toc-number">1.4.1.</span> <span class="tree-post-toc-text">问题定义</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E6%B5%81%E5%90%91"><span class="tree-post-toc-number">1.4.2.</span> <span class="tree-post-toc-text">数据的流向</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E8%BE%93%E5%85%A5%E8%A1%A8%E7%A4%BA"><span class="tree-post-toc-number">1.4.3.</span> <span class="tree-post-toc-text">输入表示</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#Encoder-Layer"><span class="tree-post-toc-number">1.4.4.</span> <span class="tree-post-toc-text">Encoder Layer</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-4"><a class="tree-post-toc-link" href="#Multi-Header-Layer"><span class="tree-post-toc-number">1.4.4.1.</span> <span class="tree-post-toc-text">Multi-Header Layer</span></a></li><li class="tree-post-toc-item tree-post-toc-level-4"><a class="tree-post-toc-link" href="#SEP-token"><span class="tree-post-toc-number">1.4.4.2.</span> <span class="tree-post-toc-text">[SEP] token</span></a></li><li class="tree-post-toc-item tree-post-toc-level-4"><a class="tree-post-toc-link" href="#Dropout-Add-Norm"><span class="tree-post-toc-number">1.4.4.3.</span> <span class="tree-post-toc-text">Dropout, Add &amp; Norm</span></a></li><li class="tree-post-toc-item tree-post-toc-level-4"><a class="tree-post-toc-link" href="#%E7%90%86%E8%A7%A3MultiHead"><span class="tree-post-toc-number">1.4.4.4.</span> <span class="tree-post-toc-text">理解MultiHead</span></a></li><li class="tree-post-toc-item tree-post-toc-level-4"><a class="tree-post-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="tree-post-toc-number">1.4.4.5.</span> <span class="tree-post-toc-text">总结</span></a></li></ol></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E8%AE%AD%E7%BB%83%E6%96%B9%E6%B3%95"><span class="tree-post-toc-number">1.5.</span> <span class="tree-post-toc-text">训练方法</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%B8%80%E5%A0%86%E9%97%AE%E9%A2%98"><span class="tree-post-toc-number">1.6.</span> <span class="tree-post-toc-text">一堆问题</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#Self-Attention-is-BiDirectional"><span class="tree-post-toc-number">1.6.1.</span> <span class="tree-post-toc-text">Self-Attention is BiDirectional</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-CLS-%E8%83%BD%E4%BD%9C%E4%B8%BA%E6%95%B4%E4%B8%AA%E6%96%87%E6%9C%AC%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="tree-post-toc-number">1.6.2.</span> <span class="tree-post-toc-text">为什么 [CLS] 能作为整个文本的表示</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E6%80%BB%E7%BB%93-2"><span class="tree-post-toc-number">1.7.</span> <span class="tree-post-toc-text">总结</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-1"><a class="tree-post-toc-link"><span class="tree-post-toc-number">2.</span> <span class="tree-post-toc-text">衍生模型</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#RoBERTa"><span class="tree-post-toc-number">2.1.</span> <span class="tree-post-toc-text">RoBERTa</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#XLNet"><span class="tree-post-toc-number">2.2.</span> <span class="tree-post-toc-text">XLNet</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#AlBERTa"><span class="tree-post-toc-number">2.3.</span> <span class="tree-post-toc-text">AlBERTa</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#FastBert"><span class="tree-post-toc-number">2.4.</span> <span class="tree-post-toc-text">FastBert</span></a></li></ol></li></ol></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/python/">python</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-toc-icon gg-file-add"></i><a class="tree-list-post-link" href="/2021/04/29/python/pre-commit/" title="pre-commit 工具">pre-commit 工具</a><ol class="tree-post-toc"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%B8%80%E3%80%81%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B"><span class="tree-post-toc-number">1.</span> <span class="tree-post-toc-text">一、快速上手</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#1-1-%E5%AE%89%E8%A3%85%E5%B7%A5%E5%85%B7"><span class="tree-post-toc-number">1.1.</span> <span class="tree-post-toc-text">1.1 安装工具</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#1-2-%E5%AE%89%E8%A3%85hook%E8%84%9A%E6%9C%AC"><span class="tree-post-toc-number">1.2.</span> <span class="tree-post-toc-text">1.2 安装hook脚本</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#1-3-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="tree-post-toc-number">1.3.</span> <span class="tree-post-toc-text">1.3 配置文件</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#1-4-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="tree-post-toc-number">1.4.</span> <span class="tree-post-toc-text">1.4 参数说明</span></a></li></ol></li></ol></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/skills/">skills</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/05/01/skills/how-to-write-readme/" title="如何编写一个好的README"><i class="post-icon gg-file-document"></i>如何编写一个好的README</a></li><li class="tree-list-item"><i class="toggle-toc-icon gg-file-add"></i><a class="tree-list-post-link" href="/2021/05/01/skills/technical-writer/" title="Technical Writer">Technical Writer</a><ol class="tree-post-toc"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFTechnical-Writer"><span class="tree-post-toc-number">1.</span> <span class="tree-post-toc-text">什么是Technical Writer</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="tree-post-toc-number">1.1.</span> <span class="tree-post-toc-text">概念</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#Technical-Writer-%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="tree-post-toc-number">1.2.</span> <span class="tree-post-toc-text">Technical Writer 的目的</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%B8%80%E5%AE%9A%E8%A6%81%E6%88%90%E4%B8%BATechnical-Writer"><span class="tree-post-toc-number">2.</span> <span class="tree-post-toc-text">一定要成为Technical Writer</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E6%9C%80%E5%A5%BD%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="tree-post-toc-number">2.1.</span> <span class="tree-post-toc-text">最好的学习方法</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E8%A1%8C%E5%8A%A8%E5%8A%9B"><span class="tree-post-toc-number">2.2.</span> <span class="tree-post-toc-text">行动力</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E5%8F%AF%E8%83%BD%E6%80%A7"><span class="tree-post-toc-number">2.3.</span> <span class="tree-post-toc-text">可能性</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E8%87%AA%E5%88%B6%E5%8A%9B"><span class="tree-post-toc-number">2.4.</span> <span class="tree-post-toc-text">自制力</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AATechnical-Writer%EF%BC%9F"><span class="tree-post-toc-number">3.</span> <span class="tree-post-toc-text">如何成为一个Technical Writer？</span></a><ol class="tree-post-toc-child"><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%80%A7"><span class="tree-post-toc-number">3.1.</span> <span class="tree-post-toc-text">系统性</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E5%B0%91%E7%82%B9%E6%8B%98%E6%9D%9F"><span class="tree-post-toc-number">3.2.</span> <span class="tree-post-toc-text">少点拘束</span></a></li><li class="tree-post-toc-item tree-post-toc-level-3"><a class="tree-post-toc-link" href="#%E5%8D%9A%E6%96%87%E4%B8%8D%E6%98%AF%E4%B8%80%E8%B9%B4%E8%80%8C%E5%B0%B1"><span class="tree-post-toc-number">3.3.</span> <span class="tree-post-toc-text">博文不是一蹴而就</span></a></li></ol></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%9D"><span class="tree-post-toc-number">4.</span> <span class="tree-post-toc-text">给自己的话</span></a></li></ol></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/thoughts/">thoughts</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-toc-icon gg-file-add"></i><a class="tree-list-post-link" href="/2021/08/20/thoughts/become-a-sharer/" title="Become a Sharer">Become a Sharer</a><ol class="tree-post-toc"><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E4%B8%80%E5%AE%9A%E8%A6%81%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AASharer"><span class="tree-post-toc-number">1.</span> <span class="tree-post-toc-text">一定要成为一个Sharer</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E5%88%86%E4%BA%AB%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88"><span class="tree-post-toc-number">2.</span> <span class="tree-post-toc-text">分享到底是什么</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B%E5%88%86%E4%BA%AB"><span class="tree-post-toc-number">3.</span> <span class="tree-post-toc-text">如何开始分享</span></a></li><li class="tree-post-toc-item tree-post-toc-level-2"><a class="tree-post-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="tree-post-toc-number">4.</span> <span class="tree-post-toc-text">总结</span></a></li></ol></li></ul></li></ul>
+        <div id="widget-tree-button">
+          <i class="gg-chevron-right"></i>
+        </div>
+      </div><!-- hexo injector body_end end --></body>
+</html>
