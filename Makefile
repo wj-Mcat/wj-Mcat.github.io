@@ -1,15 +1,30 @@
+.PHONY: default
+default: 
+	make commit
+	make deploy
+
 .PHONY: install
 install:
+	npm install hexo-cli --save
 	npm install
 
 .PHONY: start
 start:
-	hexo server
+	npm run clean
+	npm run server
+
+.PHONY: commit
+commit:
+	git add .
+	git commit -m 'update blogs'
+	git push origin master
 
 .PHONY: new
 new:
-	hexo new
+	npm run new
 
 .PHONY: deploy
 deploy:
-	hexo genearate && hexo deploy
+	npm run clean
+	npm run build
+	npm run deploy
