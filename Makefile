@@ -28,3 +28,4 @@ deploy:
 	npm run clean
 	npm run build
 	npm run deploy
+	npm run clean
