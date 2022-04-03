@@ -5,22 +5,22 @@ tags:
     - python
 ---
 
-Http Server旨在处理HttpRequest和HttpRespose，而在python当中只需要按照wsgi的请求接口来实现HttpHandler即可。
+Http Server旨在处理HttpRequest并返回HttpResponse，不同WebFramework具备不同的Routing、View等机制，可都遵循WSGI接口处理Http请求，这样所有的请求就都可以运行在基于WSGI的服务器上，从而实现接口。
 
-此篇文章我将记录我阅读Http Server相关源码的技巧和心得
+在Python中写一个WebFramework是一个很简单的事情，当然入口方法最核心的在于以下此函数：
+
+```python
+from werkzeug.serving import run_simple
+run_simple(t.cast(str, host), port, self, **options)
+```
+
+此代码仅仅是给大家一个直观的感受，后续我将逐渐剖析几个主流WebFramework中的核心技巧和源码实现。
 
 <!--more -->
 
 ## Flask 源码
 
 ### app.py
-
-* 运行和启动server
-
-```python
-from werkzeug.serving import run_simple
-run_simple(t.cast(str, host), port, self, **options)
-```
 
 * http handler entry point
 
