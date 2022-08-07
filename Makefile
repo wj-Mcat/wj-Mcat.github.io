@@ -5,13 +5,13 @@ default:
 
 .PHONY: install
 install:
-	npm install hexo-cli --save
-	npm install
+	cnpm install hexo-cli --save
+	cnpm install
 
 .PHONY: start
 start:
-	npm run clean
-	npm run server
+	cnpm run clean
+	cnpm run server
 
 .PHONY: commit
 commit:
@@ -21,11 +21,11 @@ commit:
 
 .PHONY: new
 new:
-	npm run new
+	cnpm run new
 
 .PHONY: deploy
 deploy:
-	npm run clean
-	npm run build
-	npm run deploy
-	npm run clean
+	cnpm run clean
+	cnpm run build
+	cnpm run deploy
+	cnpm run clean
