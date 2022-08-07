@@ -76,7 +76,7 @@ gen_stub_file_by_tensor_member(members)
 
 ## 这个包的未来
 
-我相信，未来paddle肯定是会支持类型注释的，毕竟原始`paddle/tensor/tensor.py`文件已经写上了`TODO`。只是该特性还没有完成的时候，这个工具可以提升大家的编码体验。
+我相信，未来paddle肯定是会支持类型注释的，毕竟原始[`paddle/tensor/tensor.py`](https://github.com/PaddlePaddle/Paddle/blob/develop/python/paddle/tensor/tensor.py)文件已经写上了`TODO`。只是该特性还没有完成的时候，这个工具可以提升大家的编码体验。
 
 希望这个工具能够让大家写paddle越来越爽。
 
