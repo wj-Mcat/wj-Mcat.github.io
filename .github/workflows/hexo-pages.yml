@@ -6,9 +6,12 @@ jobs:
   pages:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - name: Build
         with:
-          node-version: 14
+          node-version: 16
         run: 
           npm install hexo-cli --save
           npm install
