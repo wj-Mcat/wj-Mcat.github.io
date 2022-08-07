@@ -1,9 +1,6 @@
 name: Pages
 
-on:
-  push:
-    branches:
-      - master  # default branch
+on: [push, pull_request]
 
 jobs:
   pages:
