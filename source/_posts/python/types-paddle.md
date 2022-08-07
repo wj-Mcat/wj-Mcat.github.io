@@ -6,7 +6,7 @@ tags:
     - types
 ---
 
-Paddle中没有Tensor类，导致在IDE中写代码时没有办法进行智能提升，我提供了一个解决方案。
+Paddle中没有Tensor类，导致在IDE中写代码时没有办法进行智能提示，我提供了一个解决方案。
 
 ![](/images/2022.07/types-paddle-mini.gif)
 
@@ -18,7 +18,7 @@ Paddle中没有Tensor类，导致在IDE中写代码时没有办法进行智能�
 * 添加`tensor.pyi`文件到paddle包当中，从而实现代码智能提示。
 
 
-## 类型注释的三种结局方案
+## 类型注释的三种解决方案
 
 在python当中有三种方式给代码提供类型注释，从而让IDE能够实现智能提示：
 
