@@ -9,12 +9,11 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "5.4.0"
+    "version": "5.4.2"
   },
   "dependencies": {
     "hexo": "^5.0.0",
-    "hexo-admin": "^2.3.0",
-    "hexo-cli": "^4.2.0",
+    "hexo-cli": "^4.3.0",
     "hexo-deployer-git": "^3.0.0",
     "hexo-directory-category": "^1.1.4",
     "hexo-fs": "^3.1.0",
