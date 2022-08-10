@@ -117,7 +117,7 @@ deploy:
   email: 1435130236@qq.com
   
 
-disqus_shortname: wj-mcat-blog
+# disqus_shortname: wj-mcat-blog
 
 auto_dir_categorize:
   enable: true  # options:true, false; default is true
@@ -151,3 +151,19 @@ menu:
 # markdown:
 #   plugins:
 #     - markdown-it-latex2img
+
+
+theme_config:
+  override: true
+
+  valine:
+    enable: true
+    appid: w3D9jiwVEvfdjlanD1d07CDu-gzGzoHsz
+    appkey: jeywJIWuYTwk6ICXnxhnlCUB
+    # notify: true
+    placeholder: "欢迎留下善意的评论"
+    avatar: mm
+    guest_info: 昵称,自我介绍链接
+    pageSize: 10
+    visitor: true
+    # comment_count: true
