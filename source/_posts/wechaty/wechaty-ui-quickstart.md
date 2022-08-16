@@ -20,10 +20,10 @@ Wechaty UI能够让开发者为自己的插件编写对应的UI，从而实现�
 ## 安装
 
 ```shell
-pip install wechaty==0.9.dev8
+pip install wechaty>=0.9.dev8
 ```
 
-注意，最新版本目前还正处于活跃测试中，大家有任何问题都可以提issue来共建这个wechaty-ui的功能。
+> 注意，最新版本目前还正处于活跃测试中，详细可见[wechaty in pypi](https://pypi.org/project/wechaty/#history)，大家有任何问题都可以提issue来共建这个wechaty-ui的功能。
 
 ## 编写插件基类
 
@@ -35,28 +35,25 @@ class CounterPlugin(WechatyPlugin):
     # 需要和blueprint注册的UI入口地址一致
     VIEW_URL = '/api/plugins/counter/view'
 
-    def __init__(self):
-        # 此方法不能删除
-        super().__init__()
-        self.count = 0
-
     async def blueprint(self, app: Quart) -> None:
         
         @app.route('/api/plugins/counter/view')
         async def get_counter_view():
             
             with open("./src/plugins/views/table.jinja2", 'r', encoding='utf-8') as f:
+            # with open("./src/plugins/views/vue.html", 'r', encoding='utf-8') as f:
                 template = f.read()
+            
+            self.setting['count'] += 1
 
-            self.count += 1
-            response = await render_template_string(template, count=self.count)
+            response = await render_template_string(template, count=self.setting['count'])
             return response
 ```
 
 此插件中需要注意如下几个地方：
-* `VIEW_URL`: UI 页面加载的入口，在类中注册的属性必须和`blueprint`中一致。
-* `blueprint`: 此函数传递一个Quart对象以此注册全局路由来处理不同UI逻辑。
-* `view`入口（get_counter_view）:  返回的只需要是浏览器可识别的元素即可，可为：字符串、html代码、jinja2 渲染数据之后的数据（也是字符串）
+* `VIEW_URL`: UI 页面加载的入口，此属性必须和`blueprint`中注册的view路由保持一致。
+* `blueprint`: 此函数传递一个Quart对象以此注册全局路由来处理不同UI逻辑，此过程与flask的路由注册逻辑保持一致。
+* `view`入口（`get_counter_view`函数）:  返回的内容需要是浏览器可识别的元素即可，可为：字符串、html代码、jinja2 渲染数据之后的数据（也是字符串）。
 
 ## 添加UI代码
 
@@ -68,6 +65,10 @@ class CounterPlugin(WechatyPlugin):
 {% endfor %}
 </ul>
 ```
+
+## 启动机器人
+
+
 
 通过以上两个步骤即可实现一个：实时统计页面浏览数量的插件。是不是很简单，可是这个实在是太过于简单，接下来我将给大家介绍如何使用vue2编写一个前后端有交互的UI元素。
 
@@ -85,11 +86,6 @@ class UICounterPlugin(WechatyPlugin):
     # 需要和blueprint注册的UI入口地址一致
     VIEW_URL = '/api/plugins/ui_counter/view'
 
-    def __init__(self):
-        # 此方法不能删除
-        super().__init__()
-        self.count = 0
-
     async def blueprint(self, app: Quart) -> None:
         
         @app.route('/api/plugins/ui_counter/view')
@@ -101,8 +97,8 @@ class UICounterPlugin(WechatyPlugin):
         
         @app.route('/api/plugins/ui_counter/count')
         async def get_ui_count():
-            self.count += 0
-            return jsonify({"data": self.count})
+            self.setting['count'] += 1
+            return jsonify({"data": self.setting['count']})
 ```
 
 ## Vue Counter UI
