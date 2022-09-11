@@ -7,6 +7,10 @@ author: wj-Mcat
 date: 2022-09-10
 ---
 
+![](/images/2022/time-to-think.jpeg)
+
+> 图片来源于[business-success-and-the-art-of-better-thinking/](https://simplysuccessful-llc.com/business-success-and-the-art-of-better-thinking/)
+
 人生要学会思考，把控人生，看清周围的人、事、人与人、事与事以及人与事，最后看清过去、现在和未来。
 
 这句话，很大也很现实。
