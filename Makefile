@@ -1,3 +1,6 @@
+.DEFAULT_GOAL := deploy
+
+
 .PHONY: default
 default: 
 	make commit
