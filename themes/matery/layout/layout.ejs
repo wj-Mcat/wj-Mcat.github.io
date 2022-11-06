@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="<%= config.language %>">
+<head>
+    <%- partial('_partial/head') %>
+</head>
+
+<body>
+
+<%- partial('_partial/header') %>
+<%- body %>
+<%- partial('_partial/footer') %>
+
+<%- partial('_partial/search') %>
+<%- partial('_partial/back-top') %>
+
+<script src="https://lib.baomitu.com/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="https://lib.baomitu.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+<script src="https://lib.baomitu.com/aos/3.0.0-beta.6/aos.js"></script>
+<script src="https://lib.baomitu.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+<script src="https://lib.baomitu.com/lightgallery/1.6.11/js/lightgallery-all.min.js"></script>
+<% if (theme.clicklove.enable) { %>
+<script src="/libs/others/clicklove.js"></script>
+<% } %>
+<script src="/js/matery.js"></script>
+<%- partial('_partial/google-analytics') %>
+<span id="cnzz_stat_icon_1275855156" hidden></span>
+<script src="//s23.cnzz.com/z_stat.php?id=1275855156&amp;online=1&amp;show=line"></script>
+</body>
+</html>

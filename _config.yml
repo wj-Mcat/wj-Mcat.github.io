@@ -4,14 +4,42 @@
 
 # Site
 title: 小猫杂货铺
-subtitle: '分享技术生活中的细枝末节'
 description: '我想，坚持把博客给写下去'
 keywords: AI,Chatbot,Wechaty
 author: 吴京京
-language: zh-Hans
-timezone: ''
-
+language: zh-CN
+subtitle: "keep reading, keep writing, keep coding"
 darkmode: true
+
+indexbtn:
+  enable: true
+  name: Github
+  icon: fab fa-github-alt
+  url: https://github.com/wj-Mcat/wj-Mcat.github.io
+
+myProjects:
+  enable: true
+  data:
+    python-wechaty:
+      icon: fas fa-file-alt
+      iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
+      url: https://github.com/wechaty/python-wechaty
+      desc: Python Wechaty is a Conversational RPA SDK for Chatbot Makers written in Python
+    code-generator:
+        icon: fas fa-user-secret
+        iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'
+        url: https://github.com/wj-Mcat/code-generator
+        desc: 模板式代码生成器，将会逐渐内置多种模板式代码生成
+    bot-maker:
+        icon: fas fa-universal-access
+        iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
+        url: https://github.com/wj-Mcat/bot-maker
+        desc: script-engine for bot maker
+
+githubLink:
+  enable: true
+  url: https://github.com/wj-Mcat
+  title: Fork Me
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -104,7 +132,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: matery
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

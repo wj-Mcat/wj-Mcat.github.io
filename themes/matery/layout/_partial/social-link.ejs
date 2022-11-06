@@ -1,0 +1,11 @@
+<a href="mailto:wjmcater@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="https://github.com/wj-Mcat" class="tooltipped" target="_blank" data-tooltip="访问GitHub" data-position="top" data-delay="50"></a>
+    <i class="fa fa-github"></i>
+</a>
+<% if (config.feed && config.feed.path == 'atom.xml') { %>
+<a href="<%- url_for('/atom.xml') %>" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+<% } %>

@@ -64,9 +64,45 @@ Decoder模型是uni-directional，也就是单向的，为自回归模型，
 
 代表模型有：Dec-only: GPT-{1,2,3}, {🐭, 🐹}, PaLM
 
+## 计算逻辑流程
 
-## 计算流程
+# 源码解析
+
+## 输入输出
+
+```python
+
+```
 
 
 
+```python
+
+```
+
+
+```python
+
+```
+
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
 
