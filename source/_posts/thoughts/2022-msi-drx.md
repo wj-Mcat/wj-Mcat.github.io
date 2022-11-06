@@ -1,8 +1,9 @@
 ---
-title: 恭喜DRX获取的2022年MSI冠军
+title: 恭喜DRX获得2022年MSI冠军
 tags:
   - thought
   - life-long-learning
+  - dream
 author: wj-Mcat
 date: 2022-11-06
 ---
