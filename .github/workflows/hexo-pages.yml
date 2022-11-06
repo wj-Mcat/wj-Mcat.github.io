@@ -14,7 +14,6 @@ jobs:
         run: 
           npm install hexo-cli --save
           npm install
-          git clone https://github.com/theme-next/hexo-theme-next themes/next
           npm run clean
           npm run build
       - name: Deploy
