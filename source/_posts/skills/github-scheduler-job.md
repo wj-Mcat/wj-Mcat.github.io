@@ -2,7 +2,7 @@
 title: Github任务调度任务
 date: 2022-11-07
 tags:
-    * stock
+  - stock
 ---
 
 当你有一些想要定时执行的、内容可放到github上的一些任务，可使用Github的任务调度workflow来（白嫖）完成这个功能。
