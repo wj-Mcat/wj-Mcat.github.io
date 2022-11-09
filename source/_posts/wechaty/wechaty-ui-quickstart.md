@@ -19,7 +19,7 @@ Wechaty UI能够让开发者为自己的插件编写对应的UI，从而实现�
 
 ## 安装
 
-```shell
+```shell 
 pip install wechaty>=0.9.dev8
 ```
 
@@ -154,7 +154,7 @@ class UICounterPlugin(WechatyPlugin):
 
 顾名思义，每个插件都可以处理来自于机器人的所有消息，如`message`, `friendship`等，大家只需要重写对应的`on_{event-name}`函数即可舍添加对应的消息事件的处理方式。例如：
 
-```python
+```python preset=mypreset lineno=True line=1-4
 @message_controller.may_disable_message
 async def on_message(self, msg: Message) -> None:
     if msg.text() == "ding":
