@@ -138,13 +138,14 @@ postCalendar: true
 # the Gitalk config，default disabled
 # Gitalk 评论模块的配置，默认为不激活
 gitalk:
-  enable: false
-  owner:
-  repo:
+  enable: true
+  owner: wj-Mcat
+  repo: wj-Mcat.github.io
   oauth:
-    clientId:
-    clientSecret:
-  admin:
+    clientId: 0609b755cf93ccb68faf
+    clientSecret: cac309596e51226d74fcfa15075edf3482beedb4
+  proxy: https://cors-server-git-master-wj-mcat.vercel.app/
+  admin: [wj-Mcat]
 
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
@@ -154,7 +155,7 @@ gitment:
 # disqus config, default disabled
 # Disqus评论模块的配置，默认为不激活
 disqus:
-  enable: true
+  enable: false
   shortname: wjmcat
 
 # Livere comment configuration, the default is not activated

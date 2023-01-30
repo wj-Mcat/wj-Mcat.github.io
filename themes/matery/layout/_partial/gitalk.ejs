@@ -13,6 +13,7 @@
         repo: '<%- theme.gitalk.repo %>',
         owner: '<%- theme.gitalk.owner %>',
         admin: <%- JSON.stringify(theme.gitalk.admin) %>,
+        proxy: '<%- theme.gitalk.proxy %>',
         id: '<%- date(page.date, 'YYYY-MM-DDTHH-mm-ss') %>',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
