@@ -15,7 +15,7 @@
   "dependencies": {
     "gitalk": "^1.8.0",
     "hexo": "^5.0.0",
-    "hexo-cli": "^4.3.0",
+    "hexo-cli": "^4.3.1",
     "hexo-deployer-git": "^3.0.0",
     "hexo-directory-category": "^1.1.4",
     "hexo-fs": "^3.1.0",
@@ -30,8 +30,9 @@
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-search": "^1.0.5",
     "hexo-server": "^2.0.0",
-    "hexo-theme-next": "^8.12.3",
+    "hexo-theme-next": "^8.19.1",
     "hexo-widget-tree": "^0.1.1",
+    "hexo-wordcount": "^6.0.1",
     "markdown-it-latex2img": "0.0.6",
     "nib": "^1.2.0"
   }
