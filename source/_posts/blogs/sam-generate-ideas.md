@@ -3,7 +3,7 @@ title: 产生想法
 tags:
   - thoughts
 date: 2024-01-04
-hide_nav: true
+mathjax: true
 ---
 
 >  没有各种奇思妙想的人，人生肯定不精彩。

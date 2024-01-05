@@ -36,4 +36,3 @@ deploy:
 	cnpm run build
 	cnpm run deploy
 	cnpm run clean
-	curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://wj-mcat.github.io&token=JBLByPkviUnoScwr"
