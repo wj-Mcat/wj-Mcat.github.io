@@ -4,6 +4,16 @@
 
 博客地址：https://wj-mcat.github.io/
 
+## Latex 公式
+
+```shell
+{% mathjax '{ "conversion": { "em": 204 }, "tex": { "tags": "ams" }, "svg": { "exFactor": 1.03 } }' %}
+
+f(x) = f(a) + f'(a)(x - a) + \frac{f''(a)}{2!}(x - a)^2 + \frac{f'''(a)}{3!}(x - a)^3 + \cdots + \frac{f^{(n)}(a)}{n!}(x - a)^n + \cdots
+
+{% endmathjax %}
+```
+
 ## Copyright & License
 
 - Docs © 2021-now wj-Mcat
