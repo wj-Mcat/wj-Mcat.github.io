@@ -9,7 +9,7 @@ default:
 .PHONY: install
 install:
 	npm i hexo-theme-next
-	cd theme && git clone https://github.com/blinkfox/hexo-theme-matery && cd ..
+	# cd theme && git clone https://github.com/blinkfox/hexo-theme-matery && cd ..
 	cnpm install hexo-cli --save
 	cnpm install
 	npm i --save hexo-wordcount

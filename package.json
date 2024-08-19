@@ -30,7 +30,7 @@
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-search": "^1.0.5",
     "hexo-server": "^2.0.0",
-    "hexo-theme-next": "^8.12.3",
+    "hexo-theme-next": "^8.19.1",
     "hexo-widget-tree": "^0.1.1",
     "markdown-it-latex2img": "0.0.6",
     "nib": "^1.2.0"

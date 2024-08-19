@@ -5,6 +5,7 @@ tags:
   - life-long-learning
 author: wj-Mcat
 date: 2023-01-30
+slug: restart-life
 ---
 
 高考的失利让我至今还微妙的影响着我，曾无数次想象着如果高考可以重来，我一定要更加努力，争取有一个好成绩，考上一个更好的学校，可是这一切都是幻想。
