@@ -184,23 +184,23 @@ menu:
 theme_config:
   override: true
 
-  leancloud_visitors:
-    enable: true
-    app_id: w3D9jiwVEvfdjlanD1d07CDu-gzGzoHsz
-    app_key: jeywJIWuYTwk6ICXnxhnlCUB
-    # Required for apps from CN region
-    server_url:  http://www.wjmcat.cn
-    # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
-    # If you don't care about security in leancloud counter and just want to use it directly
-    # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
-    security: true
-  
-  chat:
-    enable: true
-    icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
-    text: Chat # Button text, change it as you wish.
-  
-  changyan:
-    enable: true
-    appid: cywejIWDC
-    appkey: prod_d7a85da436cb29be812af9825ca336b4
+giscus:
+  enable: true
+  repo: wj-Mcat/wj-Mcat.github.io # Github repository name
+  repo_id: MDEwOlJlcG9zaXRvcnkzMTQxMDMxNjM= # Github repository id
+  category: General # Github discussion category
+  category_id: DIC_kwDOErjVe84ChxTf # Github discussion category id
+  # Available values: pathname | url | title | og:title
+  mapping: title 
+  # Available values: 0 | 1
+  reactions_enabled: 1
+   # Available values: 0 | 1
+  emit_metadata: 1
+  # Available values: light | light_high_contrast | light_protanopia | light_tritanopia | dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | preferred_color_scheme | transparent_dark | noborder_light | noborder_dark | noborder_gray | cobalt | purple_dark
+  theme: light
+  # Available values: en | zh-CN
+  lang: en
+  # Place the comment box above the comments
+  input_position: bottom
+  # Load the comments lazily
+  loading: lazy

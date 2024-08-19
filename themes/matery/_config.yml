@@ -149,8 +149,8 @@ gitalk:
 
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
-gitment:
-  enable: false
+# gitment:
+#   enable: true
 
 # disqus config, default disabled
 # Disqus评论模块的配置，默认为不激活
