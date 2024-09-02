@@ -1,0 +1,37 @@
+<div class="card card-giscus">
+    <div id="giscus-container" class="card-content"></div>
+</div>
+
+<style>
+    .card-giscus {
+        padding: 20px;
+    }
+</style>
+
+<script>
+    window.addEventListener('load', function () {
+      var node_to_replace = document.getElementById('giscus-container');
+      var giscus_div = document.createElement('div');
+      giscus_div.className="giscus";
+      node_to_replace.replaceWith(giscus_div);
+
+      let giscusAttributes = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "wj-Mcat/wj-Mcat.github.io",
+        "data-repo-id": "MDEwOlJlcG9zaXRvcnkzMTQxMDMxNjM=",
+        "data-category": "General",
+        "data-category-id": "DIC_kwDOErjVe84ChxTf",
+        "data-mapping": "title",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-theme": "light",
+        "data-lang": "en",
+        "crossorigin": "anonymous",
+        "async": "",
+      };
+  
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.body.appendChild(giscusScript);
+    })
+  </script>

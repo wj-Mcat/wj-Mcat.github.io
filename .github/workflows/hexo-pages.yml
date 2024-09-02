@@ -1,26 +1,24 @@
-# name: Pages
+name: Pages
 
-# on:
-#   push:
-#     branches:
-#       - master  # default branch
+on: [push, pull_request]
 
-# jobs:
-#   pages:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Build
-#         with:
-#           node-version: 14
-#         run: 
-#           npm install hexo-cli --save
-#           npm install
-#           git clone https://github.com/theme-next/hexo-theme-next themes/next
-#           npm run clean
-#           npm run build
-#       - name: Deploy
-#         uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           github_token: ${{ secrets.TOKEN }}
-#           publish_dir: ./public
-#           publish_branch: gh-pages  # deploying branch
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: use node 
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Build
+        run: 
+          npm install hexo-cli --save
+          npm install
+          npm run clean
+          npm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages  # deploying branch

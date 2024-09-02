@@ -1,3 +1,6 @@
+.DEFAULT_GOAL := deploy
+
+
 .PHONY: default
 default: 
 	make commit
@@ -5,13 +8,17 @@ default:
 
 .PHONY: install
 install:
-	npm install hexo-cli --save
-	npm install
+	npm i hexo-theme-next
+	# cd themes && git clone https://github.com/blinkfox/hexo-theme-matery && cd ..
+	cnpm install hexo-cli --save
+	cnpm install
+	npm i --save hexo-wordcount
+	npm i -g rimraf
 
 .PHONY: start
 start:
-	npm run clean
-	npm run server
+	cnpm run clean
+	cnpm run server
 
 .PHONY: commit
 commit:
@@ -21,11 +28,11 @@ commit:
 
 .PHONY: new
 new:
-	npm run new
+	cnpm run new
 
 .PHONY: deploy
 deploy:
-	npm run clean
-	npm run build
-	npm run deploy
-	npm run clean
+	cnpm run clean
+	cnpm run build
+	cnpm run deploy
+	cnpm run clean

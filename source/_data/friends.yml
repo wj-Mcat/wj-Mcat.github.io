@@ -1,0 +1,11 @@
+- avatar: '/images/wechaty/mstile-310x310.png'
+  name: 'python-wechaty'
+  introduction: 'Python Wechaty is a Conversational RPA SDK for Chatbot Makers written in Python'
+  url: 'https://github.com/wechaty/python-wechaty'
+  title: Author
+
+- avatar: '/images/wechaty/paddle.png'
+  name: 'PaddleNLP'
+  introduction: '👑 Easy-to-use and powerful NLP library with 🤗 Awesome model zoo, supporting wide-range of NLP tasks from research to industrial applications, including 🗂Text Classification, 🔍 Neural Search, ❓ Question Answering, ℹ️ Information Extraction, 📄 Document Intelligence, 💌 Sentiment Analysis and 🖼 Diffusion AICG system etc.'
+  url: 'https://github.com/PaddlePaddle/PaddleNLP'
+  title: Contributor
