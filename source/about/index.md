@@ -8,6 +8,10 @@ Hello, developers.
 
 I'm 吴京京 👨‍💻, author of [python-wechaty](https://github.com/wechaty/python-wechaty), artificial intelligence master of [BUPT](https://www.bupt.edu.cn/), great passion about Chatbot, [blogs](https://wj-mcat.github.io/).
 
+* 前百度文心一言算法工程师，现冲在一线做 Agent 算法，做端到端优化。
+* 曾经热爱开源，现激情退散，不过也期待一个全面拥抱开源的机会。
+* 关注 Agent 相关产品形态，时刻保持着对产品和技术的敏感度。
+
 🎃 🎃 Latest activites:
 
 - 📄 writing documentation system of [python-wechaty](https://python-wechaty.readthedocs.io/)
