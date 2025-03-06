@@ -175,7 +175,7 @@ valine:
   verify: false
   visitor: true
   avatar: 'mm' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
-  pageSize: 10
+  pageSize: 100000
   placeholder: 'just go go' # Comment Box placeholder
 
 # Whether to display fork me on github icon and link, default true, You can change it to your repo address
